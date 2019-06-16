@@ -1,0 +1,24 @@
+﻿AppWorks School Remote Learnning Assignment - Week1
+王品翔
+
+A1.
+    a.正確:宣告一個不可改寫的整數id其值為9527
+    b.錯誤:5.6不是整數
+    c.正確:宣告內容為"Hello Kotlin!"的字串title
+    d.錯誤:String類型不可為null，將String改成String?則可編譯
+    e.正確:宣告一個可為空的Double
+    f.錯誤:沒有List<String>?這種用法
+    g.正確:宣告一個List其內容可為空或字串
+	h.錯誤:在g.中宣告的list其內容可為空，無法用.size取得其大小
+	i.正確:承h.，因list內的元素可能為空，所以用此方法可安全取得回傳值2
+
+A2.
+    ans.: c
+	message.length會檢查message中的字元數(包含空格與標點符號)共39個
+	會讓第4行程式碼執行印出"Your grace"
+
+A3.
+    ans.: d.
+    array為一個有6個元素的單行陣列，it會自動填入元素的index
+	所以array可表示為{1000的0次方, 1000的1次方, ... ,1000的5次方}
+	
