@@ -1,0 +1,53 @@
+﻿AppWorks School Remote Learnning Assignment - Week3
+王品翔
+
+A1.  封裝可限制其他類別或程式碼使用或更改特性及方法
+     這可以增加該類別的安全性，避免在其他地方錯誤使用或更改
+
+A2.  枚舉類別可在其中宣告多個物件，並賦予該物件數值及方法
+
+     當某個變數只會有少數幾種特定數值時，我們可以使用枚舉類別賦予該變數數值
+     例如一個變數表示該房間的使用狀況，只有"使用中"、"開放"、"清潔中"等三種狀態
+     或是某個商品的顏色只有5種，就可以用枚舉類別宣告好該5種顏色去表示該商品的顏色變數
+
+A3.  在class前面加上"enum"關鍵字，以下用房間狀態舉例，物件名稱(房間狀態)後面可在括弧內加入數值
+     也可以在後面的大括弧中改寫抽象函數，讓該物件可呼叫該函數
+
+_______________________  Sample code start  ________________________
+
+enum class RoomStatu(val someValue: Int){
+    OCCUPIED(0) {
+        override fun whatIsTheStatu() {
+            println("It's occupied")
+        }
+    },
+
+    OPEN(1) {
+        override fun whatIsTheStatu() {
+            println("It's open")
+        }
+    },
+
+    CLEANING(-1) {
+        override fun whatIsTheStatu() {
+            println("It's cleaning")
+        }
+    };
+
+    abstract fun whatIsTheStatu()
+}
+
+fun main() {
+    RoomStatu.OCCUPIED.whatIsTheStatu()
+    println(RoomStatu.valueOf("OPEN"))
+    println("${RoomStatu.CLEANING.ordinal} : it will be 2")
+}
+_______________________  Sample code end  __________________________
+
+
+A4.  LinearLayout中所有元件都是線性排列，例如左右的水平排列或上下的垂直排列
+     RelativeLayout中的元件與元件之間或是元件與整個Layout都有相對關係，例如元件在整個Layout裡置中、置左...，元件在另一個元件的上、下、左、右等等
+
+A5.  ConstraintLayout有類似RelativeLayout中讓元件的邊緣對齊、指定間距，以及像LinearLayout讓元件水平或垂直排列的功能
+     LinearLayout與RelativeLayout能做到的他都能做到，在design tab中也能直接加入元件讓編輯器自動產生限制
+     另外的好處是他在design tab中較直觀，不需要使用一堆LinearLayout與RelativeLayout的巢狀構造設計layout
