@@ -1,0 +1,65 @@
+﻿AppWorks School Remote Learnning Assignment - Week4
+王品翔
+
+A1.  Polymorphism (多形)是指一個物件傳達一個訊息(或是事件...等等)給另一個物件時，
+     該訊息會因接收物件的類別不同而有所不同，例如定義一個"動物"類別底下有"魚"跟
+     "狗"兩個子類別，動物類別中有一個方法"呼吸()"，魚會"用鰓呼吸()"、狗會"用肺
+     呼吸()"，同一個方法對不同物件產生不同行為表示這個系統有多型的行為。
+
+
+A2.  Activity有initialized、created(創造出來但是還沒顯示在畫面上)、started(顯示在
+     畫面上但使用者無法與之互動)、resumed(使用者可以與之互動)、destroyed五種狀態，
+     七個方法的呼叫時機如下:
+
+initialized onCreate() ->           onStart() ->         onResume() ->
+                           created               started               resumed
+ destroyed  <-onDestroy()           <-onStop()           <-onPause()
+
+     onRestart()會在started進入created後欲再次回到started狀態時呼叫，完成後再呼叫
+     onStart()進入started狀態
+
+
+A3.  Android Jetpack是Google推出的一套由函式庫、工具、架構指南合成的組件，為了增進
+     開發者開發Android app的速度所推出，recyclerview、constraint layout等等都包含其中
+
+     在build.gradle的dependencies{}中輸入implementation "androidx.函式庫名稱.版本"
+     來使用Android Jetpack提供的函式與工具
+
+
+A4.  i. Activity是一個能與使用者互動的元件，可以連結設計好的UI與程式碼，讓使用者執行
+     特定功能
+
+     ii. Service提供能在背景中長時間執行的功能，在不需要與使用者互動時使用它，service
+     會在main thread中執行
+
+     iii. Content provider提供應用程式存取其他應用程式資料的機制，包含如何封裝資料與
+     定義安全性
+
+     iv. Broadcast Receiver可接收來自其他應用程式或Android系統發出的廣播，一支應用程式
+     註冊好BroadcastReceiver後該程式可以接收廣播
+
+     v. Notification可讓應用程式在自己的UI以外的地方顯示該應用程式資訊，例如在螢幕上緣
+     往下滑會顯示狀態列，應用程式如通訊軟體或e-mail可在其中顯示訊息或其他相關資訊
+
+     vi. Runtime Permission是在使用者執行程式後才決定該程式是否能取得存取安全性資料的權限，
+     或是連結有其他功能的軟體，例如存取相簿、聯絡人資料、map上的位置或連結相機
+
+     vii. ANR(Application Not Responding)是指main thread被占用太久導致main thread不能更新
+     畫面就會跳出ANR訊息，讓使用者決定強制關閉該程式或是等待程式完成目前的任務
+
+     viii. OOM(Out Of Memory)當記憶體沒有足夠的空間讓程式創造新物件時產生的錯誤
+
+     ix. Exception: 程式執行時可能會出現例外狀況，例如原本要讀取某個檔案，若該檔案不存在時
+     此程式會發生error，為避免此情況發生可以先寫好例外狀況發生時該執行的程式碼，避免程式中斷
+
+     x. Material Design: 專注在畫面呈現的設計上，讓使用者更直觀地使用應用程式，例如UI裡有多個
+     元件，用陰影讓不同層的元件產生層次感，或是用有實質意義的轉場動畫讓使用者專注在該專注的地方
+
+
+A5.  Coroutines可讓多個process輪流或同時執行，例如載入畫面的資料很多且畫面更新要等到資料
+     載入完畢才能執行時使用者就會發現畫面有嚴重停頓，coroutine讓process決定何時要讓別的
+     process佔用處理器，在多核心處理器的裝置上可由不同處理器來負責不同process，完成
+     自己的process後處理器們會回報結果給主要處理器(大部分多核心裝置有主從關係)
+
+     Coroutine能使不同的任務被同時執行，或至少讓使用者認為是被同時執行
+
